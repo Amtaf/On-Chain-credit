@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@uniswap/v4-core/contracts/interfaces/IHook.sol";
-import "@uniswap/v4-core/contracts/interfaces/IPool.sol";
+//import {Hooks} from "v4-core/src/libraries/Hooks.sol";
+import {IHooks} from "v4-core/src/interfaces/IHooks.sol";
+import {IPoolManager} from "v4-core/src/interfaces/IPoolManager.sol";
 
-contract collateralHook is IHook{
+contract CollateralHook is IHooks{
     address public owner;
     mapping(address => bool) public approvedPools;
 

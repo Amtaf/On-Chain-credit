@@ -1,7 +1,0 @@
-@openzeppelin/=lib/openzeppelin-contracts/
-@uniswap/v4-core/=lib/uniswap-v4-core/
-@uniswap/v4-periphery/=lib/uniswap-v4-periphery/
-@uniswap/swap-router/=lib/uniswap-v4-swap-router/
-@solmate/=lib/solmate/
-@ds-test/=lib/forge-std/lib/ds-test/src/
-forge-std/=lib/forge-std/src/

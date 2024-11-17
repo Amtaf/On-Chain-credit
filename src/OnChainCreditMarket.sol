@@ -1,6 +1,8 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./CollateralHook.sol";
+import {CollateralHook} from "./CollateralHook.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract OnChainCreditMarket {
     struct Position {

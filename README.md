@@ -1,66 +1,23 @@
-## Foundry
+# On_Chain Credit Market
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A protocol where users borrow tokens by locking Uniswap LP tokens as collateral.
 
-Foundry consists of:
+## Main Features 
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### Colateralization
 
-## Documentation
+Users deposit Uniswap LP tokens (representing liquidity in pools) as collateral.
+Use IERC20 to interact with LP tokens.
 
-https://book.getfoundry.sh/
+### Borrowing
 
-## Usage
+The protocol calculates borrowing power based on LP token value.
+Protect against impermanent loss by factoring token volatility.
 
-### Build
+### Interest calculation
 
-```shell
-$ forge build
-```
+Borrowed tokens accrue interest
 
-### Test
+### Liquidity provision
 
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+If the loan becomes undercollateralized, liquidators can repay the loan and claim collateral.
